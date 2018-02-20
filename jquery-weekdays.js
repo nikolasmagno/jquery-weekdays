@@ -17,7 +17,7 @@ $(function($){
                 var li = $(item.target);
                 var _selected = !li.prop('selected')
                 li.prop('selected', _selected);
-                li.toggleClass(options.itemSelectedClass);
+            li.toggleClass(options.itemSelectedClass);
             });
 
             html.append(liElement);
@@ -27,16 +27,20 @@ $(function($){
     };
 
     $.fn.weekdays.days = ["Sun","Mon", "Tue", "Wed", "Thu", "Fri", "Sat"]; 
-    $.fn.selectedIndexes = function(){
-        var _list = $(this).find('li').filter(function(a){ return a.selected; });
-        return _list.map(function(item){ return item["data-day"]; });
-    };
-    $.fn.selectedDays = function(){
-        var _list = $(this).find('li').filter(function(a){ return a.selected; });
-        var _this = $(this);
 
-        return _list.map(function(item){ 
-            return _this.data().days[item["data-day"]]; 
-        });
+    $.fn.selectedIndexes = function(){
+        return $(this).find('li')
+            .filter(function(a){ return a.selected; })
+            .map(function(item){ return item["data-day"]; });
+    };
+
+    $.fn.selectedDays = function(){
+        var $this = $(this);
+
+        return $(this).find('li')
+            .filter(function(a){ return a.selected; })
+            .map(function(item){ 
+                return $this.data().days[item["data-day"]]; 
+            });
     }; 
 });
