@@ -1,30 +1,30 @@
 $(function($){
     $.fn.weekdays = function(options){
-                        var _options = options ? options : {};
-                        var _days = _options.days ? _options.days : $.fn.weekdays.days;
-                        var _listClass = _options.listClass ? _options.listClass : 'weekdays-list';
-                        var _itemClass = _options.itemClass ? _options.itemClass : 'weekdays-day';
-                        var _itemSelectedClass = _options.itemSelectedClass ? _options.itemSelectedClass : 'weekday-selected';
+        options = options ? options : {};
+        options.days = options.days ? options.days : $.fn.weekdays.days;
+        options.listClass = options.listClass ? options.listClass : 'weekdays-list';
+        options.itemClass = options.itemClass ? options.itemClass : 'weekdays-day';
+        options.itemSelectedClass = options.itemSelectedClass ? options.itemSelectedClass : 'weekday-selected';
 
-                        var html = $("<ul class="+_listClass+">");
+        var html = $("<ul class="+options.listClass+">");
 
-                        $(this).data({ days:_days});
+        $(this).data({ days: options.days});
 
-                        $($(this).data().days).each(function(index, item){
-                            var li = $("<li data-day="+index+" class="+_itemClass+">"+item + "</li>");
+        $($(this).data().days).each(function(index, item){
+            var li = $("<li data-day="+index+" class="+options.itemClass+">"+item + "</li>");
 
-                            li.on('click',function(item){
-                                var _li = $(item.target);
-                                var _selected = !_li.prop('selected')
-                                _li.prop('selected', _selected);
-                                _li.toggleClass(_itemSelectedClass);
-                            });
+            li.on('click',function(item){
+                var _li = $(item.target);
+                var _selected = !_li.prop('selected')
+                _li.prop('selected', _selected);
+            _li.toggleClass(options.itemSelectedClass);
+            });
 
-                            html.append(li);
-                        });
+            html.append(li);
+        });
 
-                        $(this).append(html); 	
-                    };
+        $(this).append(html); 	
+    };
 
     $.fn.weekdays.days = ["Sun","Mon", "Tue", "Wed", "Thu", "Fri", "Sat"]; 
     $.fn.selectedIndexes = function(){
