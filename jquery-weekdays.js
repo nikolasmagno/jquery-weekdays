@@ -11,16 +11,16 @@ $(function($){
         $(this).data({ days: options.days});
 
         $($(this).data().days).each(function(index, item){
-            var li = $("<li data-day="+index+" class="+options.itemClass+">"+item + "</li>");
+            var liElement = $("<li data-day="+index+" class="+options.itemClass+">"+item + "</li>");
 
-            li.on('click',function(item){
-                var _li = $(item.target);
-                var _selected = !_li.prop('selected')
-                _li.prop('selected', _selected);
-            _li.toggleClass(options.itemSelectedClass);
+            liElement.on('click',function(item){
+                var li = $(item.target);
+                var _selected = !li.prop('selected')
+                li.prop('selected', _selected);
+                li.toggleClass(options.itemSelectedClass);
             });
 
-            html.append(li);
+            html.append(liElement);
         });
 
         $(this).append(html); 	
