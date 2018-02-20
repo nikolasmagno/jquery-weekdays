@@ -1,7 +1,7 @@
 # jquery-weekdays
 A jquery plugin to create week day's options
 
-![alt text](https://screenshotscdn.firefoxusercontent.com/images/4d62a3cf-8ca1-49d2-8336-f2bc537cfb32.png)
+![alt text](https://screenshotscdn.firefoxusercontent.com/images/a4c9b11d-57f4-4420-9080-751fdd72a8b3.png)
 
 ## Usage
 
