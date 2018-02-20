@@ -5,6 +5,7 @@ $(function($){
                         var _listClass = _options.listClass ? _options.listClass : 'weekdays-list';
                         var _itemClass = _options.itemClass ? _options.itemClass : 'weekdays-day';
                         var _itemSelectedClass = _options.itemSelectedClass ? _options.itemSelectedClass : 'weekday-selected';
+
                         var html = $("<ul class="+_listClass+">");
 
                         $(this).data({ days:_days});
@@ -25,7 +26,7 @@ $(function($){
                         $(this).append(html); 	
                     };
 
-    $.fn.weekdays.days = ['Sun',"Mon", "Tue", "Wed", "Thu", "Fri", "Sat"]; 
+    $.fn.weekdays.days = ["Sun","Mon", "Tue", "Wed", "Thu", "Fri", "Sat"]; 
     $.fn.selectedIndexes = function(){
         var _list = $(this).find('li').filter(function(a){ return a.selected; });
         return _list.map(function(item){ return item["data-day"]; });
