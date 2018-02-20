@@ -15,8 +15,8 @@ $(function($){
 
             liElement.on('click',function(item){
                 var li = $(item.target);
-                var _selected = !li.prop('selected')
-                li.prop('selected', _selected);
+                var selected = !li.prop('selected')
+                li.prop('selected', selected);
             li.toggleClass(options.itemSelectedClass);
             });
 
