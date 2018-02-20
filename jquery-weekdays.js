@@ -10,7 +10,7 @@ $(function($){
                         $(this).data({ days:_days});
 
                         $($(this).data().days).each(function(index, item){
-                            var li = $("<li id="+index+" class="+_itemClass+">"+item + "</li>");
+                            var li = $("<li data-day="+index+" class="+_itemClass+">"+item + "</li>");
 
                             li.on('click',function(item){
                                 var _li = $(item.target);
@@ -27,15 +27,15 @@ $(function($){
 
     $.fn.weekdays.days = ['Sun',"Mon", "Tue", "Wed", "Thu", "Fri", "Sat"]; 
     $.fn.selectedIndexes = function(){
-        var _list = $(this).find('li').filter(function(indice, a){ return a.selected; });
-        return _list.map(function(index, item){ return item.id; });
+        var _list = $(this).find('li').filter(function(a){ return a.selected; });
+        return _list.map(function(item){ return item["data-day"]; });
     };
     $.fn.selectedDays = function(){
-        var _list = $(this).find('li').filter(function(indice, a){ return a.selected; });
+        var _list = $(this).find('li').filter(function(a){ return a.selected; });
         var _this = $(this);
 
-        return _list.map(function(index, item){ 
-            return _this.data().days[item.id]; 
+        return _list.map(function(item){ 
+            return _this.data().days[item["data-day"]]; 
         });
     }; 
 });
