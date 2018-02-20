@@ -26,7 +26,7 @@ $(function($){
                     };
 
     $.fn.weekdays.days = ['Sun',"Mon", "Tue", "Wed", "Thu", "Fri", "Sat"]; 
-    $.fn.selectedIndexs = function(){
+    $.fn.selectedIndexes = function(){
         var _list = $(this).find('li').filter(function(indice, a){ return a.selected; });
         return _list.map(function(index, item){ return item.id; });
     };
