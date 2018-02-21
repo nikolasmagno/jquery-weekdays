@@ -12,7 +12,8 @@ A jquery plugin to create week day's options
 ### Custom
 ```javascript
 $('#weekdaysCustom').weekdays({
-   days: [ "Domingo" ,"Segunda", "Terça", "Quarta", "Quinta", "Sexta", "Sábado"] 
+   days: [ "Domingo" ,"Segunda", "Terça", "Quarta", "Quinta", "Sexta", "Sábado"] ,
+   singleSelect : true
 });
 ```
 ### Parameters
