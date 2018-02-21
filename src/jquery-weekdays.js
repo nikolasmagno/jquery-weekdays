@@ -1,3 +1,4 @@
+/*Created By Nikolas Magno - https://github.com/nikolasmagno/jquery-weekdays*/
 $(function($){
     $.fn.weekdays = function(options){
         options = consolideOptions(options);
