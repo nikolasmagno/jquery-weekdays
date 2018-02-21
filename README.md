@@ -16,17 +16,19 @@ $('#weekdaysCustom').weekdays({
 });
 ```
 ### Parameters
-  * listClass  - CSS Class used on UL element;
-  * itemClass  - CSS Class used on each LI element;
-  * itemSelectedClass - CSS Class used on each LI element selected;
- 
+  * listClass: CSS Class used on UL element;
+  * itemClass: CSS Class used on each LI element;
+  * itemSelectedClass: CSS Class used on each LI element selected;
+  * itemSelectedClass: CSS Class used on each LI element selected;
+  * singleSelect: change to single select mode, only one option can be choosed; 
+  
 ### Methods
-  * selectedIndexes : returns a list of indexes for each selected elements;
+  * selectedIndexes : returns a list of indexes selected elements;
 
 ```javascript
 $('#weekdays').selectedIndexes() // returns ["0", "1"] 
 ```
-  * selectedDays : returns a list of selected day's 
+  * selectedDays : returns a list of selected days
 
 ```javascript
 $('#weekdays').selectedDays() // returns ["Sun", "Mon"]
