@@ -9,6 +9,12 @@ A jquery plugin to create week day's options
 ```javascript
  $('#weekdays').weekdays();
 ```
+
+### Simple starting with pre-selected values 
+```javascript
+ $('#weekdays').weekdays({ selectedIndexes: [0, 2, 4, 6] });
+```
+
 ### Custom
 ```javascript
 $('#weekdaysCustom').weekdays({
@@ -22,6 +28,7 @@ $('#weekdaysCustom').weekdays({
   * itemSelectedClass: CSS Class used on each LI element selected;
   * itemSelectedClass: CSS Class used on each LI element selected;
   * singleSelect: change to single select mode, only one option can be choosed; 
+  * selectedIndexes : list of indexes selected elements;
   
 ### Methods
   * selectedIndexes : returns a list of indexes selected elements;

@@ -7,11 +7,13 @@ $(function($){
         var $html = $("<ul class="+options.listClass+">");
 
         $this.data({
-            days: options.days
+            days: options.days,
+            selectedIndexes: options.selectedIndexes
         });
 
         $($this.data().days).each(function(index, item){
-            var $liElement = $("<li data-day="+index+" class="+options.itemClass+">"+item + "</li>");
+            var selected = $this.data().selectedIndexes.includes(index);
+            var $liElement = $("<li data-day=" + index + " class=" + options.itemClass + " selected=" + selected + ">" + item + "</li>");
 
             $liElement.on('click',function(item){
                 if(options.singleSelect)
@@ -20,6 +22,9 @@ $(function($){
                 var $li = $(item.target); 
                 toggleSelection($li, options);
             });
+
+            if(selected)
+                $liElement.toggleClass(options.itemSelectedClass);
 
             $html.append($liElement);
         });
@@ -54,6 +59,7 @@ $(function($){
     function consolideOptions(options){
         options = options ? options : {};
         options.days = options.days ? options.days : $.fn.weekdays.days;
+        options.selectedIndexes = options.selectedIndexes ? options.selectedIndexes : [];
         options.listClass = options.listClass ? options.listClass : 'weekdays-list';
         options.itemClass = options.itemClass ? options.itemClass : 'weekdays-day';
         options.itemSelectedClass = options.itemSelectedClass ? options.itemSelectedClass : 'weekday-selected';
@@ -78,4 +84,4 @@ $(function($){
          $li.prop('selected', selected);
          $li.toggleClass(options.itemSelectedClass);
     }
-});
+}); 
