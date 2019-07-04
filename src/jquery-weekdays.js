@@ -26,6 +26,8 @@ $(function($){
             if(selected)
                 $liElement.toggleClass(options.itemSelectedClass);
 
+            $liElement.prop('selected', selected);
+
             $html.append($liElement);
         });
 
